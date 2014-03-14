@@ -912,6 +912,11 @@ front page
 	.feature-bg,
 	.feature-wrapper{display:none;}
 
+.tabber .nav-tabs > li > a {
+    font: 12px/18px 'SESAllumiBold',Verdana,sans-serif;
+    padding: 0 1em;
+}
+
 	/*
 	page
 	-------------------------------------------*/
@@ -960,7 +965,7 @@ front page
 	.lg-offset{
 		width: 100%;
 	}
-	.navbar-header 	.sm-offset{max-width: 130px;}
+	.navbar-header .sm-offset{max-width: 130px;}
 	.home .main-wrap {
 		background: none;
 		padding: 10px;
