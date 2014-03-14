@@ -783,7 +783,7 @@ social icons
 .container .simple-social-icons ul li a,
 .container .simple-social-icons ul li a:hover{
     color: #fff !important;
-    /*font-size: 12px;*/
+    font-size: 12px;
     padding: 3px;
 
 	-webkit-border-radius: 3px; 
@@ -801,6 +801,8 @@ social icons
 .simple-social-icons ul li.social-youtube a:hover{background-color: #F44F51 !important;}
 
 .simple-social-icons ul li a:hover {opacity:0.7;}
+.mobile-footer .widget.simple-social-icons ul li a,
+.mobile-footer .widget.simple-social-icons ul li a:hover{ font-size:20px;}
 /*
 WordPress Core
 -------------------------------------------*/
