@@ -777,13 +777,13 @@ social icons
 .sidebar .widget.simple-social-icons .widget-title{    
     display: inline-block;
     float: left;
-    line-height: 1;
+    line-height: 24px;
     margin: 0 10px 0 0;
 }
 .container .simple-social-icons ul li a,
 .container .simple-social-icons ul li a:hover{
     color: #fff !important;
-    font-size: 12px;
+    /*font-size: 12px;*/
     padding: 3px;
 
 	-webkit-border-radius: 3px; 
