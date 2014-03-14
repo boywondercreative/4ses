@@ -874,18 +874,18 @@ front page
 
 
 @media only screen and (max-width: 1024px) {
-
 	.home .front-bump-shadow:before, .home .front-bump-shadow:after {height: 44px;}
-
 	.navbar-default .navbar-nav > li > a {
 		font-size: 10px;
 		margin: 14px 3px;
 		padding: 0 10px;
 	}
-
 	.tagline {height:48px;}
 	.tabber .nav-tabs > li {height:50px;}
-	
+	.tabber .nav-tabs > li > a {
+		font: 12px/18px 'SESAllumiBold',Verdana,sans-serif;
+		padding: 0 1em;
+	}	
 	.widget_custom_menu_widget > .widget-inner > ul > li > a {
 		padding: 7.5px;
 		padding: 0.75em;
@@ -912,10 +912,7 @@ front page
 	.feature-bg,
 	.feature-wrapper{display:none;}
 
-.tabber .nav-tabs > li > a {
-    font: 12px/18px 'SESAllumiBold',Verdana,sans-serif;
-    padding: 0 1em;
-}
+
 
 	/*
 	page
