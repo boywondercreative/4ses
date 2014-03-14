@@ -780,6 +780,7 @@ social icons
     line-height: 24px;
     margin: 0 10px 0 0;
 }
+.container .simple-social-icons ul li {margin: 0 6px !important;}
 .container .simple-social-icons ul li a,
 .container .simple-social-icons ul li a:hover{
     color: #fff !important;
