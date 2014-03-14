@@ -34,3 +34,7 @@
         </div>
     </div>
 </footer>
+<script>
+jQuery("body").fitVids();
+jQuery(".main").fitVids();
+</script>

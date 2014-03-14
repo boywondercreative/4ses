@@ -15,7 +15,7 @@ function enqueue_my_styles() {
     
     // Load the main stylesheet
     wp_enqueue_style( 'my-theme', get_stylesheet_directory_uri() . '/override.css' );
-    
+	wp_enqueue_script('custom_js', get_stylesheet_directory_uri() . '/mods/custom.js', false, null);
     /**
      * Load our IE-only stylesheet for all versions of IE:
      * <!--[if IE]> ... <![endif]-->

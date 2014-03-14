@@ -1,21 +1,23 @@
 <?php 
-/**
- * Custom functions
-**/
- 
+// * Custom functions
+// Remove extra nav menus
+function remove_default_menu(){
+	unregister_nav_menu('secondary_navigation');
+}
+add_action( 'after_setup_theme', 'remove_default_menu', 11 );
 // Add extra menus
 register_nav_menus( array(
 	'mobile_menu1' => 'Mobile Menu 1',
 	'mobile_menu2' => 'Mobile Menu 2',
 	'sidenav'	=> 'Side Menu',
-	'footer_menu' => 'Footer Menu',
-	'credits_menu' => 'Credits Menu'	
-) );
+//	'footer_menu' => 'Footer Menu',
+//	'credits_menu' => 'Credits Menu'	
+));
 //function shawn_unreg_sidebars() {
 function remove_some_widgets(){
 //	unregister_sidebar( 'sidebar-primary' );
 //	unregister_sidebar( 'sidebar-secondary' );
-	unregister_sidebar( 'jumbotron' );
+//	unregister_sidebar( 'jumbotron' );
 	unregister_sidebar( 'header-area' );
 	unregister_sidebar( 'navbar-slide-down-top' );
 	unregister_sidebar( 'navbar-slide-down-1' );
