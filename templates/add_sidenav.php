@@ -27,53 +27,39 @@
                 </li>
           </ul>
 
-        <?php if ( is_page() ) { ?>
-        <?php
-        if($post->post_parent)
-        $children = wp_list_pages('title_li=&child_of='.$post->post_parent.'&echo=0'); else
-        $children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
-        if ($children) { ?>
-        
-        <div class="title"><?php $parent_title = get_the_title($post->post_parent); echo $parent_title; ?><span></span></div>
-        <ul class="nav navmenu-nav">
-            <?php echo $children; ?>
-        </ul>
-        <?php } } ?>    
-    </nav>
+<?php if ( is_page() ) { ?>
+
+<ul class="nav navmenu-nav">
+<?php
+wp_list_pages(array(
+    'title_li' => null,
+    'depth' => 0,
+    'child_of' => 0,
+    'walker' => new My_Walker_1()
+));
+?>
+</ul><!-- .timeline -->    
+
+
+
+<?php } ?>    
+</nav>
 
     
-    <div id="side-nav-holder" class="clearfix hidden-xs">
-    
+<?php /*?>    <div id="side-nav-holder" class="clearfix hidden-xs">
         <!--this is a menu -->
         <nav id="side-nav" class="side-nav  hidden-xs" role="navigation">
           <?php if (has_nav_menu('sidenav')) :
               wp_nav_menu( array( 'theme_location' => 'sidenav', 'menu_class' => 'list-group' ) );
             endif;?>
         </nav>
-        
         <!--this is a sidebar   --> 
         <div class="sidebar hidden-xs">
             <?php if ( is_active_sidebar( 'left-sidebar' )) : ?>
                 <?php dynamic_sidebar('left-sidebar'); ?>
             <?php endif; ?>
         </div>
-
-        <!--just in case we end up needing to use a custom nav walker-->
-        <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-            <?php if ( is_page() ) { ?>
-            <?php
-            if($post->post_parent)
-            $children = wp_list_pages('title_li=&child_of='.$post->post_parent.'&echo=0'); else
-            $children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
-            if ($children) { ?>
-            
-            <div class="title"><?php $parent_title = get_the_title($post->post_parent); echo $parent_title; ?><span></span></div>
-            <ul class="nav navmenu-nav">
-                <?php echo $children; ?>
-            </ul>
-            <?php } } ?>    
-        </nav>
-
-
-    </div> 
+    </div> <?php */?>
 <?php } ?>
+
+

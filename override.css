@@ -504,7 +504,7 @@ slidenav
 }
 
 #slide-nav .navbar-toggle {
-    background-color: ;
+    background-color:transparent;
     background-image: none;
     border: 1px solid rgba(0, 0, 0, 0);
     float: left;
@@ -927,6 +927,7 @@ front page
 		padding: 5px 10px;
 		padding: 0.5em 1em;
 	}
+	.breadTrail{display:none;}
 	/*
 	sidebar
 	-------------------------------------------*/
@@ -938,8 +939,8 @@ front page
 
 	.mobile-footer{
 		background:none;
-		padding: 10px;		
-		padding:1em;
+		padding: 0 10px;		
+		padding:0 1em;
 	}
 	
 	/*
@@ -975,7 +976,7 @@ front page
 	.main-wrap {
 		background: none;
 		box-shadow: none;
-		padding: 1em;
+		padding: 10px 10px 0;
 	}
 	
 	.sidebar .widget .widget-title {margin:0 0 0.5em;}
