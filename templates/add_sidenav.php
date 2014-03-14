@@ -45,21 +45,37 @@ wp_list_pages(array(
 <?php } ?>    
 </nav>
 
+
+<nav id="navigation" class="" role="navigation"> 
+<?php
+if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'sidenav' ) ) {
+wp_nav_menu( array('depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fr', 'theme_location' => 'sidenav' ) );
+} else {
+?>
+    <ul id="main-nav" class="nav fl">
+		<?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
+        <li class="<?php echo $highlight; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
+        <?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?> 
+    </ul><!-- /#nav -->
+<?php } ?>
+<//nav>            
+
     
-<?php /*?>    <div id="side-nav-holder" class="clearfix hidden-xs">
+    <div id="side-nav-holder" class="clearfix hidden-xs">
         <!--this is a menu -->
-        <nav id="side-nav" class="side-nav  hidden-xs" role="navigation">
-          <?php if (has_nav_menu('sidenav')) :
+        <nav id="side-nav" class="side-nav" role="navigation">
+          <?php if (has_nav_menu('sidenav')) {
               wp_nav_menu( array( 'theme_location' => 'sidenav', 'menu_class' => 'list-group' ) );
-            endif;?>
+			  } else {
+				// do stuff for all other pages
+			}?>
         </nav>
         <!--this is a sidebar   --> 
-        <div class="sidebar hidden-xs">
+        <div class="sidebar">
             <?php if ( is_active_sidebar( 'left-sidebar' )) : ?>
                 <?php dynamic_sidebar('left-sidebar'); ?>
             <?php endif; ?>
         </div>
-    </div> <?php */?>
+    </div> 
 <?php } ?>
-
 
