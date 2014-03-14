@@ -886,10 +886,8 @@ front page
 		font: 12px/18px 'SESAllumiBold',Verdana,sans-serif;
 		padding: 0 1em;
 	}	
-	.widget_custom_menu_widget > .widget-inner > ul > li > a {
-		padding: 7.5px;
-		padding: 0.75em;
-	}
+	.widget_custom_menu_widget > .widget-inner > ul > li > a {padding:7.5px 5px;}
+	#footer-widgets-3 .nav-list li a {padding: 0 5px;}
 }
 
 @media (max-width:767px){
