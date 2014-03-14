@@ -757,8 +757,7 @@ ep post widget
 /*
 ep post mobile footer widget
 -------------------------------------------*/
-.mobile-footer .widget.eppostwidget ul.light li a, 
-.mobile-footer .widget.eppostwidget a.link-btn.light {
+.mobile-footer .widget.eppostwidget ul.light li a {
     background: none;
     border: none;
     color: #017DB0;
@@ -771,14 +770,15 @@ ep post mobile footer widget
     font-weight: normal;
 
 } 
+.mobile-footer .widget.eppostwidget a.link-btn.light{display:none;}
 /*
 social icons
 -------------------------------------------*/
 .sidebar .widget.simple-social-icons .widget-title{    
     display: inline-block;
     float: left;
-    margin: 0 5px 0 0;
-    margin: 0 0.5em 0 0;
+    line-height: 1;
+    margin: 0 10px 0 0;
 }
 .container .simple-social-icons ul li a,
 .container .simple-social-icons ul li a:hover{
