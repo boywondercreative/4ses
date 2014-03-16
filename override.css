@@ -13,6 +13,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 h1, .h1, h2, .h2, h3, .h3 {
     margin: 5px 0 10px;
 }
+embed,
+iframe,
+object,
+video {
+height:auto;
+	max-width: 100%;
+}
 /*
 body
 ---------------------------------------------------------------------------------------------------- */
@@ -459,32 +466,29 @@ sidebar
 /*
 left sidebar/sidenav
 -------------------------------------------*/
-#left-sidebar{
-    padding-right: 1em;
-}
-.side-nav{}
-.side-nav .list-group{ list-style:none;}
-.side-nav .list-group li {
-    font-family: 'SESAllumiBold',Tahoma,Geneva,sans-serif;
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 23px;
-    margin-bottom: 5px;
-}
-.list-group > li > a{
-	background:url("i/arrow-nav.gif");
-	background-position:left center;
-	background-repeat:no-repeat ;
-	background-size:contain;
-		
+.left-sidebar{padding-right: 10px;}
+.side-nav-wrap{ margin:70px 0 0;}
+.left-sidebar ul{ list-style:none;}
+.list-group li a,
+.list-group > li > ul > li a {
+    background: url("i/arrow-nav.gif") no-repeat scroll left center / contain rgba(0, 0, 0, 0);
     color: #000000;
     display: block;
+    font-family: verdana;
+    font-size: 13px;
+    font-weight: normal;
     height: 23px;
-    line-height: 14px;
+    line-height: 23px;
+    margin-bottom: 5px;
     padding-left: 30px;
-    text-decoration: none;	
+    text-decoration: none;
 }
-.list-group > li > a:hover{	
+.list-group > li > ul > li {
+	padding-left: 10px;
+	height:21px;
+}
+.list-group li.active a,
+.list-group li a:hover{	
 	background:url("i/arrow-nav-hover.gif");
 	background-position:left center;
 	background-repeat:no-repeat ;
@@ -567,6 +571,7 @@ right sidebar
     padding:10px;
 }
 
+.left-sidebar ul,
 .widget ol,
 .widget ul,
 .sidebar ol, 
@@ -734,6 +739,59 @@ footer html
 /*
 helpers
 ---------------------------------------------------------------------------------------------------- */
+/*
+jumbotron & royal slider
+-------------------------------------------*/
+.jumbotron {
+background:none;
+padding: 0;
+position:relative;
+}
+.jumbotron .section-inner:before {
+    background: url("i/bg-home.png") no-repeat scroll 0 0 / contain rgba(0, 0, 0, 0);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index:10;
+}
+.jumbotron:before {
+    background: url("i/home-feature-rays.png") no-repeat scroll 0 0 / contain rgba(0, 0, 0, 0);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+.jumbotron .rsABlock, 
+.jumbotron .rsSBlock {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("i/home-feature-rays.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 100% !important;
+    left: auto !important;
+    padding: 2em;
+    position: absolute;
+    right: 0;
+    top: 0 !important;
+    width: 30% !important;
+    z-index: 15;
+}
+.rsABlock h3{
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+.jumbotron .royal-caption {
+    line-height: 1.2;
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 15px;
+}
+.jumbotron .rsUni .rsBullets {}
+
 /*
 ep post widget
 -------------------------------------------*/
@@ -1077,4 +1135,26 @@ and (max-device-width : 480px)
 and (orientation : portrait)
 and (-webkit-min-device-pixel-ratio : 2) {
 /* Styles */
+}
+
+.scrollup:hover {
+    color: #fff !important;
+    background-color: #ed702b;
+    text-decoration: none;
+}
+.scrollup {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+    text-decoration: none;
+    border-radius: 3.2rem;
+    text-align: center;
+    cursor: pointer;
 }

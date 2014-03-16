@@ -80,6 +80,14 @@ function add_sidebars_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
   ));  
+  register_sidebar(array(
+		'name'          => __('jumbotron', 'roots'),
+		'id'            => 'jumbo',
+		'before_widget' => '<section class="jumbotron"><div class="container"><div class="feature-bg container"></div> ',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h1 style="display:none;" class="widget-title">',
+		'after_title'   => '</h1>',
+  ));    
 }
 add_action('widgets_init', 'add_sidebars_init', 21);
 // Add new image sizes
@@ -113,51 +121,23 @@ $output = $copyright;
 }
 return $output;
 }
-function wap8_has_children( $id ) {
-
-     $children = get_pages( 'child_of=' . $id );
-
-     if ( count( $children ) > 0 ) {
-          return '1';
-     }
-
-}
-function wap8_has_siblings() {
-
-     if ( is_page() ) {
-
-          global $post;
-
-          if ( $post->post_parent ) {
-
-               $siblings = get_pages( 'child_of=' . $post->post_parent );
-
-               if ( count( $siblings ) > 0 ) {
-                    return '1';
-               }
-
-          }
-
-     }
-
-}
-// Add specific CSS class by filter
-	add_filter('body_class','my_class_names');
-	function my_class_names($classes) {
-	if ( !is_front_page() ) {
-		// add 'class-name' to the $classes array
-		$classes[] = 'not-front';
-		}
-		// return the $classes array
-		return $classes;
-	
-}
-
-//	// Add specific CSS class by filter
-//	function my_class_names($classes) {
-//		if ( is_page_template('template-ppc.php') ) {
-//			$classes[] = 'ppc';
-//		}
-//	return $classes;
-//	}
+//// Add specific CSS class by filter
 //	add_filter('body_class','my_class_names');
+//	function my_class_names($classes) {
+//	if ( !is_front_page() ) {
+//		// add 'class-name' to the $classes array
+//		$classes[] = 'not-front';
+//		}
+//		// return the $classes array
+//		return $classes;
+//	
+//}
+
+// Add specific CSS class by filter
+function my_class_names($classes) {
+	if ( is_page_template('template-front.php') ) {
+		$classes[] = 'not-front';
+	}
+return $classes;
+}
+add_filter('body_class','my_class_names');
