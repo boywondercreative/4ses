@@ -743,6 +743,7 @@ jumbotron & royal slider
 -------------------------------------------*/
 .jumbotron {
 background:none;
+font-family:inherit;
 padding: 0;
 position:relative;
 }
