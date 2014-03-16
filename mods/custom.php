@@ -16,8 +16,8 @@ register_nav_menus( array(
 //function shawn_unreg_sidebars() {
 function remove_some_widgets(){
 //	unregister_sidebar( 'sidebar-primary' );
-//	unregister_sidebar( 'sidebar-secondary' );
-//	unregister_sidebar( 'jumbotron' );
+	unregister_sidebar( 'sidebar-secondary' );
+	unregister_sidebar( 'jumbotron' );
 	unregister_sidebar( 'header-area' );
 	unregister_sidebar( 'navbar-slide-down-top' );
 	unregister_sidebar( 'navbar-slide-down-1' );
@@ -81,7 +81,7 @@ function add_sidebars_init() {
 		'after_title'   => '</h3>',
   ));  
   register_sidebar(array(
-		'name'          => __('jumbotron', 'roots'),
+		'name'          => __('Home Page Hero', 'roots'),
 		'id'            => 'jumbo',
 		'before_widget' => '<section class="jumbotron"><div class="container"><div class="feature-bg container"></div> ',
 		'after_widget'  => '</div></section>',
@@ -121,23 +121,23 @@ $output = $copyright;
 }
 return $output;
 }
-//// Add specific CSS class by filter
-//	add_filter('body_class','my_class_names');
-//	function my_class_names($classes) {
-//	if ( !is_front_page() ) {
-//		// add 'class-name' to the $classes array
-//		$classes[] = 'not-front';
-//		}
-//		// return the $classes array
-//		return $classes;
-//	
-//}
+// Add specific CSS class by filter
+	add_filter('body_class','my_class_names');
+	function my_class_names($classes) {
+	if ( !is_front_page() ) {
+		// add 'class-name' to the $classes array
+		$classes[] = 'not-front';
+		}
+		// return the $classes array
+		return $classes;
+	
+}
 
 // Add specific CSS class by filter
-function my_class_names($classes) {
-	if ( is_page_template('template-front.php') ) {
-		$classes[] = 'not-front';
-	}
-return $classes;
-}
-add_filter('body_class','my_class_names');
+//function my_class_names($classes) {
+//	if ( is_page_template('template-front.php') ) {
+//		$classes[] = 'not-front';
+//	}
+//return $classes;
+//}
+//add_filter('body_class','my_class_names');
