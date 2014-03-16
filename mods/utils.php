@@ -234,9 +234,12 @@ function custom_breadcrumbs() {
 // add breadcrumb switch
 function breadcrumb_switch() {
 global $post;
-if ( is_page() ) {
-		custom_breadcrumbs();
-	} else {
-		do_action('shoestrap_breadcrumbs');
+if (!is_front_page()){
+
+	if ( is_page() ) {
+			custom_breadcrumbs();
+		} else {
+			do_action('shoestrap_breadcrumbs');
+		}
 	}
 }
