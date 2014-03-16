@@ -230,10 +230,11 @@ function custom_breadcrumbs() {
 		));
     ?>
 <?php }
+
 // add breadcrumb switch
 function breadcrumb_switch() {
-//global $post;
-if (!is_front_page()) && ( is_page() ) {
+global $post;
+if ( is_page() ) {
 		custom_breadcrumbs();
 	} else {
 		do_action('shoestrap_breadcrumbs');
