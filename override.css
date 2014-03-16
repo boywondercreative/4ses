@@ -754,19 +754,12 @@ position:relative;
     top: 0;
     z-index:10;
 }
-.jumbotron:before {
-    background: url("i/home-feature-rays.png") no-repeat scroll 0 0 / contain rgba(0, 0, 0, 0);
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 10;
-}
 .jumbotron .rsABlock, 
 .jumbotron .rsSBlock {
     background-attachment: scroll;
     background-clip: border-box;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("i/home-feature-rays.png");
+    background-image: url("i/caption-bg.png.png");
     background-origin: padding-box;
     background-position: 0 0;
     background-repeat: no-repeat;
