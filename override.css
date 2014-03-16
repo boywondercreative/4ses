@@ -779,15 +779,15 @@ position:relative;
     width: 30% !important;
     z-index: 15;
 }
-.rsABlock h3{
+.jumbotron .royal-caption-header {
     color: #fff;
     font-size: 14px;
     font-weight: bold;
 }
 .jumbotron .royal-caption {
-    line-height: 1.2;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 200;
+    line-height: 1.2;
     margin-bottom: 15px;
 }
 .jumbotron .rsUni .rsBullets {}
